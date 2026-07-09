@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni AI — The Intelligence Layer for AI Development</title>
+<title>Contact — Uni AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -32,10 +32,6 @@
 
   a{ color:inherit; text-decoration:none; }
 
-  img, svg{ max-width:100%; display:block; }
-
-  button{ font:inherit; }
-
   .wrap{
     max-width:900px;
     width:100%;
@@ -44,7 +40,6 @@
     flex:1;
     display:flex;
     flex-direction:column;
-    min-height:0;
   }
 
   /* ---------- Nav ---------- */
@@ -76,6 +71,7 @@
     color:var(--muted);
   }
   .nav-link:hover{ color:var(--ink); }
+  .nav-link.current{ color:var(--ink); }
 
   .btn{
     display:inline-block;
@@ -104,6 +100,7 @@
   .hero{
     flex-shrink:0;
     padding:clamp(28px,6vh,56px) 0 clamp(20px,4vh,36px);
+    border-bottom:1px solid var(--line);
   }
 
   .hero .eyebrow{
@@ -133,37 +130,42 @@
     color:var(--muted);
   }
 
-  /* ---------- Feature list ---------- */
-  .list{
-    flex:1 0 auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    border-top:1px solid var(--line);
-    padding:clamp(4px,1vh,0) 0;
+  /* ---------- Contact content ---------- */
+  .content{
+    flex:1;
+    padding:clamp(28px,5vh,44px) 0 clamp(40px,6vh,64px);
+    max-width:520px;
   }
 
-  .row{
-    display:flex;
-    align-items:baseline;
-    gap:clamp(20px,4vw,56px);
+  .details .row{
     padding:clamp(14px,2.4vh,20px) 0;
     border-bottom:1px solid var(--line);
   }
-  .row:last-child{ border-bottom:none; }
+  .details .row:first-child{ padding-top:0; }
+  .details .row:last-child{ border-bottom:none; }
 
-  .row .name{
-    flex:0 0 clamp(90px,20vw,150px);
+  .details .label{
     font-family:'Space Grotesk', sans-serif;
     font-weight:600;
-    font-size:clamp(15px,3vw,18px);
+    font-size:12px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
   }
 
-  .row .desc{
-    font-size:13px;
-    line-height:1.55;
-    color:var(--muted);
-    max-width:60ch;
+  .details .value{
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .details .value a{
+    border-bottom:1px solid var(--line);
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .details .value a:hover{
+    color:var(--coral);
+    border-color:var(--coral);
   }
 
   footer{
@@ -193,11 +195,6 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width:640px){
-    .row{ flex-direction:column; gap:4px; }
-    .row .name{ flex:0 0 auto; }
-  }
-
   @media (max-width:420px){
     .nav-actions{ gap:14px; }
     .btn{ padding:8px 16px; font-size:12px; }
@@ -214,36 +211,34 @@
 
   <header>
     <nav>
-      <div class="logo">UNI<span class="dot">·</span>AI</div>
+      <a class="logo" href="index.html">UNI<span class="dot">·</span>AI</a>
       <div class="nav-actions">
-        <a class="nav-link" href="contact.html">Contact Us</a>
+        <a class="nav-link current" href="contact.html">Contact Us</a>
         <a class="btn" href="https://forms.gle/gZei5piN8awbcv5h6" target="_blank" rel="noopener">Get a Quote</a>
       </div>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Project Intelligence</div>
-    <h1>The permanent brain for <span class="accent">AI</span> work</h1>
-    <p>A persistent memory and reasoning layer that connects you and any AI tool throughout the entire lifecycle of your project.</p>
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Let's talk about <span class="accent">your</span> workflow</h1>
+    <p>Questions about Uni AI, partnership ideas, or just want to compare notes on AI tooling — reach out and we'll get back to you.</p>
   </section>
 
-  <section class="list">
-    <div class="row">
-      <div class="name">Memory</div>
-      <div class="desc">Every decision, change and reason behind it, kept for the life of the project.</div>
-    </div>
-    <div class="row">
-      <div class="name">Reasoning</div>
-      <div class="desc">Understands your project's context before it answers, not just the prompt.</div>
-    </div>
-    <div class="row">
-      <div class="name">Continuity</div>
-      <div class="desc">Switch between Claude, Codex, Cursor or any tool without losing context.</div>
-    </div>
-    <div class="row">
-      <div class="name">Today</div>
-      <div class="desc">From the first idea to production — one brain, the whole way.</div>
+  <section class="content">
+    <div class="details">
+      <div class="row">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:info@aquesa-solutions.com">info@aquesa-solutions.com</a></div>
+      </div>
+      <div class="row">
+        <div class="label">Company</div>
+        <div class="value">Aquesa Solutions Pvt Ltd</div>
+      </div>
+      <div class="row">
+        <div class="label">Waitlist</div>
+        <div class="value"><a href="https://forms.gle/gZei5piN8awbcv5h6" target="_blank" rel="noopener">Join via form →</a></div>
+      </div>
     </div>
   </section>
 
